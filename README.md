@@ -21,7 +21,7 @@ STEPs INVOLVED IN SUPERVISED LEARNING
    
 4. Determine the input features of the training dataset, which should have enough knowledge so that the model can accurately predict the output.
 
-5.Determine the suitable algorithm for the model, such as support vector machine, decision tree, etc.
+5. Determine the suitable algorithm for the model, such as support vector machine, decision tree, etc.
 
 6. Execute the algorithm on the training dataset. Sometimes we need validation sets as the control parameters, which are the subset of training datasets.
 
@@ -135,7 +135,7 @@ Unsupervised Learning involves the data which is unlabeled and the algorithms le
  
 	a. k-means for clustering problems
  
-	b. KNN (K – Nearest Neighbors)![image](https://github.com/sspheng/Machine-Learning/assets/78303183/87e6c358-bee8-4b9e-ab66-8d993d12ec5d)
+	b. KNN (K – Nearest Neighbors)
 
 * Unsupervised Learning Algorithms are:
 1. K-means clustering
