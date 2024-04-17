@@ -6,8 +6,8 @@ A. SUPERVISED LEARNING: Supervised Learning involves the data which is labeled a
 Regression: target variable is continious like stock market, house price....
 Classification: target variable consists of categories like normal or abnormal, spam or no spam, yes or no...
 
-We will learn:
-Linear regression
+LINEAR REGRESSION
+
 This daily bike share data is a linear regression so the features are 'season','mnth', 'holiday','weekday','workingday','weathersit','temp', 'atemp', 'hum', 'windspeed'and target is 'rental'
 Linear regresssion has the form as y = ax + b where y = target, x = feature and a = parameter of model
 now we perform train test split to run the model
@@ -25,6 +25,16 @@ We choose parameter of model(a) according to minimum error function that is lost
 In linear regression we use Ordinary Least Square (OLS) as lost function.
 OLS: sum all residuals but some positive and negative residuals can cancel each other so we sum of square of residuals. It is called OLS
 Score: Score uses R^2 method that is ((y_pred - y_mean)^2 )/(y_actual - y_mean)^2
+
+LOGISTIC REGRESSION
+S – 1) Import Package, Functions and Classes
+S – 2) Get Data 
+S – 3) Create a model and train it
+S – 4) Evaluate the model
+S – 5) Improve the model
+
+
+
 
 K-NEAREST NEIGHBORS (KNN)¶
 KNN: Look at the K closest labeled data points
