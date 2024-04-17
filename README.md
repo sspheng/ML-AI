@@ -1,10 +1,13 @@
-A. SUPERVISED LEARNING¶
-Supervised learning: It uses data that has labels. Example, there are orthopedic patients data that have labels normal and abnormal.
+What is Machine Learning?
+Machine learning enables a machine to automatically learn from data, improve performance from experiences, and predict things without being explicitly programmed. A machine has the ability to learn if it can improve its performance by gaining more data.
+
+There are two categories of Machine Learning:
+A. SUPERVISED LEARNING: Supervised Learning involves the data which is labeled and the algorithms learn to predict the output from the input data. Supervised learning is where you have input variables (X) and an output variable (Y) and you use an algorithm to learn the mapping function from the input to the output. Example, there are orthopedic patients data that have labels normal and abnormal.
 There are features(predictor variable) and target variable. Features are like pelvic radius or sacral slope(If you have no idea what these are like me, you can look images in google like what I did :) )Target variables are labels normal and abnormal
 Aim is that as given features(input) predict whether target variable(output) is normal or abnormal
 Classification: target variable consists of categories like normal or abnormal
 Regression: target variable is continious like stock market
-If these explanations are not enough for you, just google them. However, be careful about terminology: features = predictor variable = independent variable = columns = inputs. target variable = responce variable = class = dependent variable = output = result
+
 
 
 EXPLORATORY DATA ANALYSIS (EDA)
@@ -128,3 +131,4 @@ KMEANS
 Lets try our first unsupervised method that is KMeans Cluster
 KMeans Cluster: The algorithm works iteratively to assign each data point to one of K groups based on the features that are provided. Data points are clustered based on feature similarity
 KMeans(n_clusters = 2): n_clusters = 2 means that create 2 cluster
+
