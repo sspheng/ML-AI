@@ -6,17 +6,21 @@ A. SUPERVISED LEARNING: Supervised Learning involves the data which is labeled a
 Regression: target variable is continious like stock market, house price....
 Classification: target variable consists of categories like normal or abnormal, spam or no spam, yes or no...
 
-We will learn linear and logistic regressions
-This daily bike share data is a linear regression so the features are and pelvic_incidence of abnormal
-I consider feature is pelvic_incidence and target is sacral_slope
-Lets look at scatter plot so as to understand it better
-reshape(-1,1): If you do not use it shape of x or y becaomes (210,) and we cannot use it in sklearn, so we use shape(-1,1) and shape of x or y be (210, 1).
-Now we have our data to make regression. In regression problems target value is continuously varying variable such as price of house or sacral_slope. Lets fit line into this points.
-
-
+We will learn:
 Linear regression
-
-y = ax + b where y = target, x = feature and a = parameter of model
+This daily bike share data is a linear regression so the features are 'season','mnth', 'holiday','weekday','workingday','weathersit','temp', 'atemp', 'hum', 'windspeed'and target is 'rental'
+Linear regresssion has the form as y = ax + b where y = target, x = feature and a = parameter of model
+now we perform train test split to run the model
+train: use train set by fitting
+test: make prediction on test set.
+With train and test sets, fitted data and tested data are completely different
+train_test_split(x,y,test_size = 0.3,random_state = 1)
+x: features
+y: target variables (normal,abnormal)
+test_size: percentage of test size. Example test_size = 0.3, test size = 30% and train size = 70%
+random_state: sets a seed. If this seed is same number, train_test_split() produce exact same split at each time
+fit(x_train,y_train): fit on train sets
+score(x_test,y_test)): predict and give accuracy on test sets
 We choose parameter of model(a) according to minimum error function that is lost function
 In linear regression we use Ordinary Least Square (OLS) as lost function.
 OLS: sum all residuals but some positive and negative residuals can cancel each other so we sum of square of residuals. It is called OLS
