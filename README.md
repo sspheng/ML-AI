@@ -2,18 +2,25 @@ What is Machine Learning?
 Machine learning enables a machine to automatically learn from data, improve performance from experiences, and predict things without being explicitly programmed. A machine has the ability to learn if it can improve its performance by gaining more data.
 
 There are two categories of Machine Learning:
-A. SUPERVISED LEARNING: Supervised Learning involves the data which is labeled and the algorithms learn to predict the output from the input data. Supervised learning is where you have input variables (X) and an output variable (Y) and you use an algorithm to learn the mapping function from the input to the output. Example, there are orthopedic patients data that have labels normal and abnormal.
-There are features(predictor variable) and target variable. Features are like pelvic radius or sacral slope(If you have no idea what these are like me, you can look images in google like what I did :) )Target variables are labels normal and abnormal
-Aim is that as given features(input) predict whether target variable(output) is normal or abnormal
-Classification: target variable consists of categories like normal or abnormal
-Regression: target variable is continious like stock market
+A. SUPERVISED LEARNING: Supervised Learning involves the data which is labeled and the algorithms learn to predict the output from the input data. Supervised learning is where you have input variables (X) and an output variable (Y) and you use an algorithm to learn the mapping function from the input to the output. And there are two categories of supervised learning:
+Regression: target variable is continious like stock market, house price....
+Classification: target variable consists of categories like normal or abnormal, spam or no spam, yes or no...
+
+We will learn linear and logistic regressions
+This daily bike share data is a linear regression so I only use two features that are sacral_slope and pelvic_incidence of abnormal
+I consider feature is pelvic_incidence and target is sacral_slope
+Lets look at scatter plot so as to understand it better
+reshape(-1,1): If you do not use it shape of x or y becaomes (210,) and we cannot use it in sklearn, so we use shape(-1,1) and shape of x or y be (210, 1).
+Now we have our data to make regression. In regression problems target value is continuously varying variable such as price of house or sacral_slope. Lets fit line into this points.
 
 
+Linear regression
 
-EXPLORATORY DATA ANALYSIS (EDA)
-In order to make something in data, as you know you need to explore data. Detailed exploratory data analysis is in my Data Science Tutorial for Beginners
-I always start with head() to see features that are pelvic_incidence, pelvic_tilt numeric, lumbar_lordosis_angle, sacral_slope, pelvic_radius and degree_spondylolisthesis and target variable that is class
-head(): default value of it shows first 5 rows(samples). If you want to see for example 100 rows just write head(100)
+y = ax + b where y = target, x = feature and a = parameter of model
+We choose parameter of model(a) according to minimum error function that is lost function
+In linear regression we use Ordinary Least Square (OLS) as lost function.
+OLS: sum all residuals but some positive and negative residuals can cancel each other so we sum of square of residuals. It is called OLS
+Score: Score uses R^2 method that is ((y_pred - y_mean)^2 )/(y_actual - y_mean)^2
 
 K-NEAREST NEIGHBORS (KNN)¶
 KNN: Look at the K closest labeled data points
@@ -47,23 +54,6 @@ random_state: sets a seed. If this seed is same number, train_test_split() produ
 fit(x_train,y_train): fit on train sets
 score(x_test,y_test)): predict and give accuracy on test sets
 
-REGRESSION¶
-Supervised learning
-We will learn linear and logistic regressions
-This orthopedic patients data is not proper for regression so I only use two features that are sacral_slope and pelvic_incidence of abnormal
-I consider feature is pelvic_incidence and target is sacral_slope
-Lets look at scatter plot so as to understand it better
-reshape(-1,1): If you do not use it shape of x or y becaomes (210,) and we cannot use it in sklearn, so we use shape(-1,1) and shape of x or y be (210, 1).
-Now we have our data to make regression. In regression problems target value is continuously varying variable such as price of house or sacral_slope. Lets fit line into this points.
-
-
-Linear regression
-
-y = ax + b where y = target, x = feature and a = parameter of model
-We choose parameter of model(a) according to minimum error function that is lost function
-In linear regression we use Ordinary Least Square (OLS) as lost function.
-OLS: sum all residuals but some positive and negative residuals can cancel each other so we sum of square of residuals. It is called OLS
-Score: Score uses R^2 method that is ((y_pred - y_mean)^2 )/(y_actual - y_mean)^2
 
 CROSS VALIDATION¶
 As you know in KNN method we use train test split with random_state that split exactly same at each time. However, if we do not use random_state, data is split differently at each time and according to split accuracy will be different. Therefore, we can conclude that model performance is dependent on train_test_split. For example you split, fit and predict data 5 times and accuracies are 0.89, 0.9, 0.91, 0.92 and 0.93, respectively. Which accuracy do you use? Do you know what accuracy will be at 6th times split, train and predict. The answer is I do not know but if I use cross validation I can find acceptable accuracy.
