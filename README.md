@@ -1,16 +1,36 @@
 What is Machine Learning?
-Machine learning enables a machine to automatically learn from data, improve performance from experiences, and predict things without being explicitly programmed. A machine has the ability to learn if it can improve its performance by gaining more data.
+Machine learning enables a machine to automatically learn from data, improve performance from experiences, and predict things without being explicitly programmed. A machine has the ability to learn if it can improve its performance by gaining more data. There are two categories of Machine Learning:
 
-There are two categories of Machine Learning:
-A. SUPERVISED LEARNING: Supervised Learning involves the data which is labeled and the algorithms learn to predict the output from the input data. Supervised learning is where you have input variables (X) and an output variable (Y) and you use an algorithm to learn the mapping function from the input to the output. And there are two categories of supervised learning:
+A. SUPERVISED LEARNING
+
+Supervised Learning involves the data which is labeled and the algorithms learn to predict the output from the input data. Supervised learning is where you have input variables (X) and an output variable (Y) and you use an algorithm to learn the mapping function from the input to the output. And there are two categories of supervised learning:
 Regression: target variable is continious like stock market, house price....
 Classification: target variable consists of categories like normal or abnormal, spam or no spam, yes or no...
+![Supervise learning](https://github.com/sspheng/Machine-Learning/assets/78303183/6887fc78-9f67-4b2f-a0b4-eb4c8bb11b5c)
 
-LINEAR REGRESSION
 
-This daily bike share data is a linear regression so the features are 'season','mnth', 'holiday','weekday','workingday','weathersit','temp', 'atemp', 'hum', 'windspeed'and target is 'rental'
-Linear regresssion has the form as y = ax + b where y = target, x = feature and a = parameter of model
-now we perform train test split to run the model
+
+
+STEPs INVOLVED IN SUPERVISED LEARNING
+
+1. First Determine the type of training dataset
+   
+2. Collect/Gather the labelled training data.
+   
+3. Split the training dataset into training dataset, test dataset, and validation dataset.
+   
+4. Determine the input features of the training dataset, which should have enough knowledge so that the model can accurately predict the output.
+
+5.Determine the suitable algorithm for the model, such as support vector machine, decision tree, etc.
+
+6. Execute the algorithm on the training dataset. Sometimes we need validation sets as the control parameters, which are the subset of training datasets.
+
+7. Evaluate the accuracy of the model by providing the test set. If the model predicts the correct output, which means our model is accurate![image](https://github.com/sspheng/Machine-Learning/assets/78303183/44d6c82d-
+
+I. REGRESSION
+
+The notebook 'daily bike rental' data is a practice of linear regression that consist of features:'season','mnth', 'holiday','weekday','workingday','weathersit','temp', 'atemp', 'hum', 'windspeed'and target is 'rental'
+Linear regresssion has the form as y = ax + b where y = target, x = feature and a = parameter of model. Now we perform train test split to run the model
 train: use train set by fitting
 test: make prediction on test set.
 With train and test sets, fitted data and tested data are completely different
@@ -26,17 +46,31 @@ In linear regression we use Ordinary Least Square (OLS) as lost function.
 OLS: sum all residuals but some positive and negative residuals can cancel each other so we sum of square of residuals. It is called OLS
 Score: Score uses R^2 method that is ((y_pred - y_mean)^2 )/(y_actual - y_mean)^2
 
-LOGISTIC REGRESSION
-S – 1) Import Package, Functions and Classes
-S – 2) Get Data 
-S – 3) Create a model and train it
-S – 4) Evaluate the model
-S – 5) Improve the model
+Linear Models
+
+	Logistic Regression: Appropriate regression analysis to conduct when dependent variable is binary
+ 
+	Support Vector Machines: Are supervised learning model with assiciated learning algorithms that analyze data for classification and regression analysis.
+
+Nonlinear models
+
+	K-nearest Neighbors (KNN): A type of instance - based learning or lazy learning where the fucntion only approximate locally and all computation is deferred until function evaluation.
+ 
+	Kernel Support Vector Machines (SVM):Are supervised learning model with assiciated learning algorithms that analyze data for classification and regression analysis
+ 
+	Naïve Bayes: Are a family of simple " Probabilistic classifiers" based on applying Bayes' Theorem with strong (Naive) independensce assumption between the features
+ 
+	Decision Tree Classification: is the most powerful and popular tool for classification and prediction, it is a flowchart like tree structure, where each internal node denoted a test on an attribute, each branch represent an outcome of the test and each leaf node 
+  (terminal node) holds a class label.
+ 
+	Random Forest Classification: is the robust machine learning algorithm that can use for variety of tasks including regression and classification. It is ensemble method, meaning that a random forest model is madeup for a large number of small decision trees called   
+  estimators, which is produce their own predictions. Random forest combined the prediction of the estimators to produce more accurate prediction.
 
 
 
 
-K-NEAREST NEIGHBORS (KNN)¶
+
+K-NEAREST NEIGHBORS (KNN)
 KNN: Look at the K closest labeled data points
 Classification method.
 First we need to train our data. Train = fit
@@ -55,21 +89,10 @@ Accuracy which is fraction of correct predictions is commonly used metric. We wi
 As you see I train data with x (features) and again predict the x(features). Yes you are reading right but yes you are right again it is absurd :)
 
 
-Therefore we need to split our data train and test sets.
-
-train: use train set by fitting
-test: make prediction on test set.
-With train and test sets, fitted data and tested data are completely different
-train_test_split(x,y,test_size = 0.3,random_state = 1)
-x: features
-y: target variables (normal,abnormal)
-test_size: percentage of test size. Example test_size = 0.3, test size = 30% and train size = 70%
-random_state: sets a seed. If this seed is same number, train_test_split() produce exact same split at each time
-fit(x_train,y_train): fit on train sets
-score(x_test,y_test)): predict and give accuracy on test sets
 
 
-CROSS VALIDATION¶
+
+CROSS VALIDATION
 As you know in KNN method we use train test split with random_state that split exactly same at each time. However, if we do not use random_state, data is split differently at each time and according to split accuracy will be different. Therefore, we can conclude that model performance is dependent on train_test_split. For example you split, fit and predict data 5 times and accuracies are 0.89, 0.9, 0.91, 0.92 and 0.93, respectively. Which accuracy do you use? Do you know what accuracy will be at 6th times split, train and predict. The answer is I do not know but if I use cross validation I can find acceptable accuracy.
 Cross Validation (CV)
 
@@ -94,7 +117,7 @@ In order to choose feature, I add new features in our regression data
 
 Linear vs Ridge vs Lasso First impression: Linear Feature Selection: 1.Lasso 2.Ridge Regression model: 1.Ridge 2.Lasso 3.Linear
 
-ROC Curve with Logistic Regression¶
+ROC Curve with Logistic Regression
 logistic regression output is probabilities
 If probability is higher than 0.5 data is labeled 1(abnormal) else 0(normal)
 By default logistic regression threshold is 0.5
