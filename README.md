@@ -7,7 +7,7 @@ Regression: target variable is continious like stock market, house price....
 Classification: target variable consists of categories like normal or abnormal, spam or no spam, yes or no...
 
 We will learn linear and logistic regressions
-This daily bike share data is a linear regression so I only use two features that are sacral_slope and pelvic_incidence of abnormal
+This daily bike share data is a linear regression so the features are and pelvic_incidence of abnormal
 I consider feature is pelvic_incidence and target is sacral_slope
 Lets look at scatter plot so as to understand it better
 reshape(-1,1): If you do not use it shape of x or y becaomes (210,) and we cannot use it in sklearn, so we use shape(-1,1) and shape of x or y be (210, 1).
